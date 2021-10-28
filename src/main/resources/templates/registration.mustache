@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+</head>
+<body>
+<div>
+{{#user}}
+        <form method="post" action="register">
+            <div>
+                <label>
+                    <input type="text" name="login" placeholder="Login" value="{{login}}">
+
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="password" name="pass" placeholder="Password" value="{{pass}}">
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="text" name="nickName" placeholder="NickName" value="{{nickName}}">
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="text" name="mail" placeholder="Mail" value="{{mail}}">
+                </label>
+            </div>
+
+            <div>
+                <input type="button" value="CANCEL">
+                <input type="submit" value="REG">
+            </div>
+        </form>
+{{/user}}
+</div>
+</body>
+</html>

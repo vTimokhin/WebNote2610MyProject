@@ -22,13 +22,13 @@ package com.example.webnote2610myproject.models;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private  Integer id;
-        @Column (nullable = false, length = 10)
+        @Column (nullable = false, length = 10, unique = true)
         private String login;
         @Column (nullable = false, length = 10)
         private String pass;
         @Column (nullable = false, length = 20)
         private String nickName;
-        @Column (nullable = false, length = 20)
+        @Column (nullable = false, length = 20, unique = true)
         private String mail;
         @Column (nullable = false)
         private Status status;
