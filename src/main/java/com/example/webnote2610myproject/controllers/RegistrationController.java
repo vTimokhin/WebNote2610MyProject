@@ -28,7 +28,7 @@ public class RegistrationController {
     }
 
     @PostMapping("register")
-    public ModelAndView register(@RequestParam String login,
+    public String register(@RequestParam String login,
                                  @RequestParam String pass,
                                  @RequestParam String nickName,
                                  @RequestParam String mail,
@@ -37,12 +37,13 @@ public class RegistrationController {
         User user = new User(0, login, pass, nickName, mail, User.Status.ACTIVE, null);
         if (userService.findByLogin(login) == null) {
             userService.save(user);
-            return new ModelAndView("redirect:");
+           //return new ModelAndView("redirect:main");
         }
         modelMap.put("user", user);
         //return new ModelAndView("redirect:registration", modelMap);
-        return new ModelAndView("redirect:main");
+       //return new ModelAndView("redirect:main");
+        return "redirect:main";
     }
-
+;
 }
 
