@@ -6,7 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
-    @GetMapping
+    @GetMapping("/")
+    public String base(ModelMap modelMap){
+        return "redirect:main";
+    }
+    @GetMapping("main")
     public String main(ModelMap modelMap){
         return "main";
     }

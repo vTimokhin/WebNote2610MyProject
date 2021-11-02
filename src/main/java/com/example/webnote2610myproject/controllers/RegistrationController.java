@@ -18,11 +18,11 @@ public class RegistrationController {
     private UserService userService;
 
     @GetMapping("registration")
-    public String registration(@ModelAttribute User user,
-                               ModelMap modelMap) {
-        if (user.getLogin() == null)
+   //public String registration(@ModelAttribute User user,
+    public String registration(ModelMap modelMap) {
+      /*  if (user.getLogin() == null)
             user = new User(0, "", "", "", "", null, null);
-        modelMap.put("user", user);
+        modelMap.put("user", user);*/
 
         return "registration";
     }
@@ -41,7 +41,7 @@ public class RegistrationController {
         }
         modelMap.put("user", user);
         //return new ModelAndView("redirect:registration", modelMap);
-        return new ModelAndView("registration");
+        return new ModelAndView("redirect:main");
     }
 
 }
